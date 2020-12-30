@@ -121,7 +121,10 @@ Apache Cassandra 3.x Administrator Associate Certification Exam Notes
   * https://thelastpickle.com/blog/2018/08/02/Re-Bootstrapping-Without-Bootstrapping.html
   * https://de.slideshare.net/ArunitGupta1/boot-strapping-in-cassandra
 * Replacing a Downed Node
-  * Replace better than remove and add.
+  * Replace better than remove and add because:
+     - You dont have to move the data twice
+     - Backups for the replaced node will still work
+     - It is faster and has less impact on the cluster
   * In jvm.options add replace_address or (better) replace_address_first_boot.
   * Monitor with nodetool netstats.
 * Size Tiered Compaction
